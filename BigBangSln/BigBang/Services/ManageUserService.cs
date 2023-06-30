@@ -1,6 +1,7 @@
 ﻿using BigBang.Interface;
 using BigBang.Models;
 using BigBang.Models.DTO;
+using Microsoft.EntityFrameworkCore;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -13,19 +14,38 @@ namespace BigBang.Services
         private readonly IRepo<int, Patient> _patientRepo;
         private readonly IGeneratePassword _passwordService;
         private readonly IGenerateToken _tokenService;
+        private readonly Context _context;
 
         public ManageUserService(IRepo<int, User> userRepo,
             IRepo<int, Doctor> doctorRepo,
             IGeneratePassword passwordService,
             IRepo<int, Patient> patientRepo,
-            IGenerateToken tokenService)
+            IGenerateToken tokenService,
+            Context context)
         {
             _userRepo = userRepo;
             _doctorRepo = doctorRepo;
             _passwordService = passwordService;
             _patientRepo = patientRepo;
             _tokenService = tokenService;
+            _context = context;
         }
+
+        public async Task<Doctor> Approval(int doctorId)
+        {
+            var doctor = await _doctorRepo.Get(doctorId);
+            if (doctor != null)
+            {
+                doctor.Status = true;
+                await _doctorRepo.Update(doctor);
+                await _context.SaveChangesAsync(); // Save the changes to the database
+
+                // Reload the updated doctor from the database
+                doctor = await _doctorRepo.Get(doctorId);
+            }
+            return doctor;
+        }
+
 
 
         public async Task<UserDTO> Login(UserDTO user)
@@ -60,13 +80,12 @@ namespace BigBang.Services
             doctor.User.PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(generatedPassword));
             doctor.User.PasswordKey = hmac.Key;
             doctor.User.Role = "Doctor";
-            //doctor.User.Status = "Not Approved";
             doctor.Status =false;
 
             var userResult = await _userRepo.Add(doctor.User);
             var docResult = await _doctorRepo.Add(doctor);
 
-            if (userResult != null && docResult != null) 
+            if (userResult != null && docResult != null)
             {
                 user = new UserDTO();
                 user.UserId = docResult.DoctorId;
@@ -104,6 +123,7 @@ namespace BigBang.Services
 
             return user;
         }
+      
     }
 }
 

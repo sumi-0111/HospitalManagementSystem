@@ -2,6 +2,7 @@
 using BigBang.Models;
 using BigBang.Models.DTO;
 using BigBang.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -88,5 +89,18 @@ namespace BigBang.Controllers
                 return  BadRequest("An error occurred while retrieving the doctors.");
             }
         }
+        [Authorize(Roles ="Admin")]
+        [HttpPost("ApproveRequest")]
+        public async Task<ActionResult<Doctor>> ApproveRequest (int doctorId)
+        {
+            var result = await _manageUser.Approval(doctorId);
+            if(result!=null)
+            {
+                return Ok(result);
+            }
+            return BadRequest("Doctor cannot be present");
+
+        }
+
     }
 }

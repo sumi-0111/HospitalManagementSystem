@@ -25,7 +25,7 @@ namespace BigBang.Models
 
         public string? Email { get; set; }
         public string? PhoneNo { get; set; }
-        public Boolean Status { get; set; }
+        public bool Status { get; set; }
         public string? Specialization { get; set; }
         public int Experience { get; set; }
 

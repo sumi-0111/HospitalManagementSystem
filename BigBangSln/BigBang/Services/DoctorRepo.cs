@@ -53,7 +53,7 @@ namespace BigBang.Services
         {
             try
             {
-                var doc = await _context.Doctors.Include(i => i.User).FirstOrDefaultAsync(i => i.DoctorId == key);
+                var doc = await _context.Doctors.FirstOrDefaultAsync(i => i.DoctorId == key);
                 return doc;
             }
             catch (Exception ex)
