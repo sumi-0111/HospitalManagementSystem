@@ -105,6 +105,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseAuthentication();
 app.UseCors("AngularCORS");
+
+
 app.UseAuthorization();
 
 app.MapControllers();
