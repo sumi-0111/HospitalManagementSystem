@@ -89,7 +89,7 @@ namespace BigBang.Controllers
                 return  BadRequest("An error occurred while retrieving the doctors.");
             }
         }
-        [Authorize(Roles ="Admin")]
+        //[Authorize(Roles ="Admin")]
         [HttpPost("ApproveRequest")]
         public async Task<ActionResult<Doctor>> ApproveRequest (int doctorId)
         {
@@ -151,6 +151,9 @@ namespace BigBang.Controllers
             }
         }
 
+        
+
+
         [HttpGet("GetById")]
         [ProducesResponseType(typeof(ActionResult<Doctor>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -185,6 +188,42 @@ namespace BigBang.Controllers
             catch (Exception ex)
             {
                 return BadRequest("Not able to delete doctor details");
+            }
+        }
+
+        [HttpGet]
+        [ProducesResponseType(typeof(ActionResult<IEnumerable<PatientDTO>>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<ActionResult<IEnumerable<PatientDTO>>> GetAllPatients()
+        {
+            var patients = await _patientRepo.GetAll();
+            try
+            {
+                if (patients != null)
+                {
+                    var patientDTOs = new List<PatientDTO>();
+                    foreach (var patient in patients)
+                    {
+                        var patientDTO = new PatientDTO
+                        {
+                            PatientId = patient.PatientId,
+                            PatientName = patient.PatientName,
+                            DOB = patient.DOB,
+                            Age = patient.Age,
+                            Gender = patient.Gender,
+                            PhoneNo = patient.PhoneNo,
+                            Email = patient.Email,
+                            Affliction = patient.Affliction
+                        };
+                        patientDTOs.Add(patientDTO);
+                    }
+                    return Ok(patientDTOs);
+                }
+                return NotFound();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("An error occurred while getting patients list");
             }
         }
 

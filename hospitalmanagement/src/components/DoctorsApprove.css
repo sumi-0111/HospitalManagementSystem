@@ -1,0 +1,44 @@
+.doctors-approve-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .appdoch {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .docapptab {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .appdocth,
+  .appdoctd {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .appdocth {
+    font-weight: bold;
+  }
+  
+  .appdocbutto {
+    padding: 5px 10px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .appdocbutto:hover {
+    background-color: #45a049;
+  }
+  
+  .appdocbutto:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+  }
+  

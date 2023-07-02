@@ -1,0 +1,55 @@
+.listpattient-head {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+ 
+  
+  pattienttable {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  
+  
+  tr:hover {
+    background-color: #92c9eb;
+  }
+  #pattienttable {
+    width: 80%; 
+    margin: 20px auto; 
+    border-collapse: collapse;
+    text-align: center;
+  }
+  
+  #pattienttable th,
+  #pattienttable td {
+    padding: 12px;
+    text-align: center;
+  }
+  
+  #pattienttable th {
+    background-color: #d98fca;
+    font-weight: bold;
+  }
+  
+  #pattienttable td {
+    border-bottom: 1px solid #b11e1e;
+    border-left: 1px solid #b11e1e;
+    border-right:1px solid #b11e1e;
+    background-color: rgba(232, 132, 132, 0.374);
+  }
+  .centerpattient-container
+  {
+    background-image: url(../images/doc4.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    background-attachment: fixed;
+  }

@@ -61,7 +61,7 @@ function DoctorRegister() {
   return (
     <div className="patregcontainer">
       <div className="formsdoccontainer">
-        <h1>Doctor Registration </h1>
+        <h1 className='appdoch'> Doctor Registration </h1>
         <div className="inputdoccontainer">
           <label className="labeldoctext">Doctor Name:</label>
           <input

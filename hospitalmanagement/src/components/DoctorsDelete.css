@@ -1,0 +1,46 @@
+.deldoc {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .deldocinpu {
+    width: 200px; 
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  .doctors-delete-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-image: -moz-repeating-linear-gradient(lightblue,lightgrey,lightpink); */
+  }
+  
+  .deldocbut {
+    background-color: #ff4f4f;
+    color: #fff;
+    margin-top: .5%;
+    font-size: larger;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .deldocbut:hover {
+    background-color: #e03e3e;
+  }
+  .bodydeldoc
+  {
+    background-image:url(../images/doc2.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+  }
+  .tabWholedoc
+  {
+    background-color: #f2f2f2;
+
+  }

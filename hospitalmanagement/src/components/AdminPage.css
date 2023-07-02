@@ -1,0 +1,71 @@
+.navbar {
+    background-color: #c826e1;
+    padding: 6px;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* .navbar-logo {
+    font-size: 24px; 
+    font-size: large;
+    font-weight: bold;
+  } 
+  
+  .navbar-logo img {
+    width: 12%;
+    height:40%;
+    float: left;
+    margin-left: 10px;
+  }
+    */
+  .navbar-menu {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+  }
+   
+  .navbar-item {
+    cursor: pointer;
+    margin-right: 15px;
+    padding: 10px;
+    margin-top: 5px;
+  }
+  
+  #hitem a:hover {
+    color: rgb(100, 247, 112);
+  }   
+  #hitem{
+    font-size:larger ;
+  }
+  .numtext
+  {
+    font-size: large;
+  }
+  .video {
+    width: 100%;
+    max-width: 800px; /* Adjust the maximum width as per your requirement */
+    margin: 0 auto;
+  }
+  
+  .video video {
+    width: 100%;
+    height: auto;
+  }
+  marquee
+  {
+    font-size: larger;
+  }
+  .marbody
+  {
+    color: tomato;
+  }
+  .marsoul
+  {
+    color: blue;
+  }
