@@ -9,6 +9,7 @@ namespace BigBang.Interface
         public Task<UserDTO> RegisterPatient(Patient patient);
         public Task<UserDTO> RegisterDoctor(Doctor doctor);
         public Task<Doctor> Approval(int DoctorId);
+        public Task<Doctor> DisapproveDoctor(int doctorId);
 
     }
 }

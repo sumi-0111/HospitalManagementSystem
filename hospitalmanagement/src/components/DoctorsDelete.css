@@ -41,6 +41,37 @@
   }
   .tabWholedoc
   {
-    background-color: #f2f2f2;
-
+    border-radius: 8px;
+    background-color: rgba(220, 215, 215, 0.7);
+    /* background-color: transparent; */
+    font-weight: bold;
+  }
+  .theaddocdel
+  {
+    background-color: white;
+  }
+  .navbar {
+    background-color: #c826e1;
+    padding: 6px;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    transition: background-color 0.3s ease;
+  }
+  
+  .navbar-menu {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+  }
+   
+  .navbar-item {
+    cursor: pointer;
+    margin-right: 15px;
+    padding: 10px;
+    margin-top: 5px;
   }

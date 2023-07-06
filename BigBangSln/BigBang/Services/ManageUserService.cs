@@ -46,7 +46,18 @@ namespace BigBang.Services
             return doctor;
         }
 
+        public async Task<Doctor> DisapproveDoctor(int doctorID)
+        {
+            var doctorResult = await _doctorRepo.Get(doctorID);
 
+            if (doctorResult != null)
+            {
+                doctorResult.Status = true;
+                await _doctorRepo.Update(doctorResult);
+                //await _doctorRepo.SaveChanges();
+            }
+            return doctorResult;
+        }
 
         public async Task<UserDTO> Login(UserDTO user)
         {

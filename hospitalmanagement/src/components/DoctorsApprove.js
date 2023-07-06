@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './DoctorsApprove.css';
-
+import { Link } from 'react-router-dom';
 const DoctorsApprove = () => {
   const [doctors, setDoctors] = useState([]);
 
@@ -38,7 +38,6 @@ const DoctorsApprove = () => {
       });
 
       if (response.ok) {
-        // Update the doctors list by fetching the updated data
         fetchDoctors();
       } else {
         console.log("Error:", response.status);
@@ -48,11 +47,37 @@ const DoctorsApprove = () => {
     }
   };
 
-  // Filter doctors whose status is not approved
   const pendingDoctors = doctors.filter(doctor => !doctor.status);
 
   return (
     <div className="doctors-approve-container">
+
+       <nav className="navbar">
+        <div className="navbar-logo"> 
+        </div>
+        <ul id="new-nav-items" className="navbar-menu">
+        <li id="hitem" className="navbar-item" >
+            <Link to="/approveddoctors" className='numtext'>Approved Doctors</Link>
+          </li> 
+        
+          <li id="hitem" className="navbar-item">
+            <Link to="/doctorsdelete" className='numtext'>Delete Doctors</Link>
+          </li>
+          <li id="hitem" className="navbar-item" >
+            <Link to="/doctorsview" className='numtext'>View Doctors</Link>
+          </li>
+         
+          <li id="hitem" className="navbar-item">
+            <Link to="/pstientsview" className='numtext'>View Patients</Link>
+          </li>
+          <li id="hitem" className="navbar-item">
+            <Link to="/doctorsapprove" className='numtext'>Approve Requests</Link>
+          </li>
+          <li id="hitem" className="navbar-item">
+            <Link to="/disapprovedoctors" className='numtext'>Disapprove Doctor</Link>
+          </li>
+        </ul>
+      </nav><br></br><br></br><br></br>
       <h1>Doctors Approval</h1>
       <br />
       <table className='docapptab'>
@@ -72,12 +97,12 @@ const DoctorsApprove = () => {
               <td className='appdoctd'>{doctor.status ? "Approved" : "Pending"}</td>
               <td className='appdoctd'>
                 {!doctor.status && (
-                  <button className='appdocbutto' onClick={() => handleApprove(doctor.doctorId)}>
+                  <button className='appdocbbuto' onClick={() => handleApprove(doctor.doctorId)}>
                     Approve
                   </button>
-                )}
+                )}   
               </td>
-            </tr>
+            </tr> 
           ))}
         </tbody>
       </table>

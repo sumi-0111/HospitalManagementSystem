@@ -5,8 +5,8 @@ import './LandingPage.css';
 
 function LandingPage() {
   return (
-    // <div>
     <div className='body'>
+ 
       <link rel="stylesheet" href="./fontawesome-free-5.15.3-web/css/all.min.css" />
       <nav>
         <div className="container">
@@ -31,15 +31,15 @@ function LandingPage() {
             Your health, our unwavering chase."</p>
 
           <Link to ="/signIn">Sign In</Link>
-          <Link to="#video">Learn more...</Link>
+          <Link to="https://player.vimeo.com/external/406124434.sd.mp4?s=61d62ed8a2d15a7b2f65c0a0467c7024f6aa1a54&profile_id=164&oauth2_token_id=57447761">Play...</Link>
         </div>
       </section>
       <section  id="video">
 
         <p>ytrhfttrdsgvxgre\dc</p>
-      {/* <video controls>
+      <video controls>
         <source src='https://player.vimeo.com/external/406124434.sd.mp4?s=61d62ed8a2d15a7b2f65c0a0467c7024f6aa1a54&profile_id=164&oauth2_token_id=57447761' type="video/mp4" ></source>
-      </video> */}
+      </video>
       </section>
       </div>
     // {/* </div> */}

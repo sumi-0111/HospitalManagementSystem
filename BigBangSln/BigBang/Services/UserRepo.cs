@@ -93,7 +93,6 @@ namespace BigBang.Services
                     user.Role = item.Role;
                     user.PasswordHash = item.PasswordHash;
                     user.PasswordKey = item.PasswordKey;
-                    //user.Status = item.Status;
                     await _context.SaveChangesAsync();
                     return user;
                 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import './RegisterHome.css';
 import { Link } from 'react-router-dom';
-
+import video from '../images/video.mp4';
 function RegisterHome() {
   return (
     <div className="contain">
@@ -14,6 +14,9 @@ function RegisterHome() {
             <Link to='/patregistration'>Register Patient</Link>
             </button>
       </div>
+      <div className='adminvid'>
+       <video src={video} controls autoPlay/>
+      </div >
     </div>
   );
 }

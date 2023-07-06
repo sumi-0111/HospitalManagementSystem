@@ -12,7 +12,6 @@ namespace BigBang.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
-    //[EnableCors("AngularCors")]
     public class UserController : ControllerBase
     {
         private readonly IManageUser _manageUser;
@@ -105,9 +104,9 @@ namespace BigBang.Controllers
         [HttpPut]
         [ProducesResponseType(typeof(Doctor), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<Doctor>> UpdateDoctorDetails(int doctorID, DoctorDTO doctor)
+        public async Task<ActionResult<Doctor>> UpdateDoctorDetails(DoctorDTO doctor)
         {
-            var existingDoctor = await _doctorRepo.Get(doctorID);
+            var existingDoctor = await _doctorRepo.Get(doctor.User.UserId);
             if (existingDoctor == null)
             {
                 return NotFound();
@@ -188,6 +187,30 @@ namespace BigBang.Controllers
             catch (Exception ex)
             {
                 return BadRequest("Not able to delete doctor details");
+            }
+        }
+
+        [HttpPost("api/Doctor/DisapproveDoctor")]
+        [ProducesResponseType(typeof(ActionResult<UserDTO>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<IActionResult> DisapproveDoctor(int doctorId)
+        {
+            try
+            {
+                var doctor = await _doctorRepo.Get(doctorId);
+
+                if (doctor != null)
+                {
+                    doctor.Status = false;
+                    await _doctorRepo.Update(doctor);
+                    return Ok($"Doctor {doctorId} has been disapproved successfully.");
+                }
+
+                return NotFound($"Doctor {doctorId} not found.");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Error disapproving doctor: {ex.Message}");
             }
         }
 

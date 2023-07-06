@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './PatientsView.css';
-
+import { Link } from 'react-router-dom';
 const PatientsView = () => {
   const [pattient, setpattient] = useState([]);
 
@@ -31,6 +31,32 @@ const PatientsView = () => {
   return (
     <div className="centerpattient-container">
      <br></br>
+     <nav className="navbar">
+        <div className="navbar-logo"> 
+        </div>
+        <ul id="new-nav-items" className="navbar-menu">
+        <li id="hitem" className="navbar-item" >
+            <Link to="/approveddoctors" className='numtext'>Approved Doctors</Link>
+          </li> 
+        
+          <li id="hitem" className="navbar-item">
+            <Link to="/doctorsdelete" className='numtext'>Delete Doctors</Link>
+          </li>
+          <li id="hitem" className="navbar-item" >
+            <Link to="/doctorsview" className='numtext'>View Doctors</Link>
+          </li>
+         
+          <li id="hitem" className="navbar-item">
+            <Link to="/pstientsview" className='numtext'>View Patients</Link>
+          </li>
+          <li id="hitem" className="navbar-item">
+            <Link to="/doctorsapprove" className='numtext'>Approve Requests</Link>
+          </li>
+          <li id="hitem" className="navbar-item">
+            <Link to="/disapprovedoctors" className='numtext'>Disapprove Doctor</Link>
+          </li>
+        </ul>
+      </nav>
       <h1 className="listpattient-head">Patient Details</h1>
       <div id="loggedpattientItems">
 

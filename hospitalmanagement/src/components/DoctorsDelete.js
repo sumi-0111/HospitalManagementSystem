@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './DoctorsDelete.css';
-
+import { Link } from 'react-router-dom';
 const DoctorsDelete = () => {
   const [doctorId, setDoctorId] = useState('');
   const [doctors, setDoctors] = useState([]);
@@ -60,8 +60,34 @@ const DoctorsDelete = () => {
 
   return (
     <div className='bodydeldoc'>
+        <nav className="navbar">
+        <div className="navbar-logo"> 
+        </div>
+        <ul id="new-nav-items" className="navbar-menu">
+        <li id="hitem" className="navbar-item" >
+            <Link to="/approveddoctors" className='numtext'>Approved Doctors</Link>
+          </li> 
+        
+          <li id="hitem" className="navbar-item">
+            <Link to="/doctorsdelete" className='numtext'>Delete Doctors</Link>
+          </li>
+          <li id="hitem" className="navbar-item" >
+            <Link to="/doctorsview" className='numtext'>View Doctors</Link>
+          </li>
+         
+          <li id="hitem" className="navbar-item">
+            <Link to="/pstientsview" className='numtext'>View Patients</Link>
+          </li>
+          <li id="hitem" className="navbar-item">
+            <Link to="/doctorsapprove" className='numtext'>Approve Requests</Link>
+          </li>
+          <li id="hitem" className="navbar-item">
+            <Link to="/disapprovedoctors" className='numtext'>Disapprove Doctor</Link>
+          </li>
+        </ul>
+      </nav>
       <div className="doctors-delete-container">
-        <br></br>
+        <br></br><br></br><br></br><br></br>
         <h1 className="deldoc">Delete Doctor</h1>
         <input type="text" className="deldocinpu" placeholder="Doctor ID" value={doctorId} onChange={handleDoctorIdChange} />
         <br />
@@ -69,7 +95,7 @@ const DoctorsDelete = () => {
         <br />
         <div className='tabWholedoc'>
         <table id="table">
-          <thead>
+          <thead className='theaddocdel'>
             <tr>
               <th>Doctor Id</th>
               <th>Name</th>

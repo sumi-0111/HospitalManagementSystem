@@ -1,0 +1,36 @@
+.patient-dashboard-container {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.slick-slider {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.slick-slide {
+  display: flex;
+  justify-content: center;
+}
+
+.carouselpatdas-image {
+  width: 1500px;
+  height: 600px; 
+  /* object-fit: cover; */
+  background-size: cover;
+}
+
+.view-doctors-button {
+  padding: 10px 20px;
+  background-color: #ff4081;
+  color: white;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.view-doctors-button:hover {
+  background-color: #ff5c9d;
+}

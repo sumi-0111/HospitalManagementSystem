@@ -3,60 +3,77 @@
     margin-bottom: 20px;
     font-size: 24px;
   }
-  /* .center-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  } */
   
-  table {
+  #doviwtable {
     width: 100%;
     border-collapse: collapse;
   }
   
-  th, td {
+  .docviewth, .docviewtd {
     padding: 10px;
     text-align: left;
     border-bottom: 1px solid #ddd;
+    
   }
   
-  /* th {
-    background-color: #f2f2f2;
-  } */
-  
-  tr:hover {
-    background-color: #92c9eb;
+ 
+  .docviewtr:hover {
+    background-color: #6317e7;
   }
-  #table {
-    width: 80%; /* Adjust the width as per your preference */
-    margin: 20px auto; /* Add margin to create space around the table */
+  #doviwtable {
+    width: 80%; 
+    margin: 20px auto; 
     border-collapse: collapse;
     text-align: center;
   }
   
-  #table th,
-  #table td {
+  #doviwtable .docviewth,
+  #doviwtable .docviewth {
     padding: 12px;
     text-align: center;
   }
   
-  #table th {
+  #doviwtable .docviewth {
     background-color: #f16fd7;
     font-weight: bold;
   }
   
-  #table td {
+  #doviwtable .docviewtd {
     border-bottom: 1px solid #b11e1e;
     border-left: 1px solid #b11e1e;
     border-right:1px solid #b11e1e;
-    background-color: rgba(237, 236, 217, 0.648);
+    background-color: white;
   }
-  .center-container
+  .centerdocview-container
   {
     background-image: url(../images/doc3.webp);
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
     background-attachment: fixed;
+  }
+  .navbar {
+    background-color: #c826e1;
+    padding: 6px;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    transition: background-color 0.3s ease;
+  }
+  
+  .navbar-menu {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+  }
+   
+  .navbar-item {
+    cursor: pointer;
+    margin-right: 15px;
+    padding: 10px;
+    margin-top: 5px;
   }

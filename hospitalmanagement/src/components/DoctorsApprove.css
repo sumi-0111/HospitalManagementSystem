@@ -1,44 +1,103 @@
 .doctors-approve-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  .appdoch {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  .docapptab {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  .appdocth,
-  .appdoctd {
-    padding: 10px;
-    text-align: left;
-    border-bottom: 1px solid #ccc;
-  }
-  
-  .appdocth {
-    font-weight: bold;
-  }
-  
-  .appdocbutto {
-    padding: 5px 10px;
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .appdocbutto:hover {
-    background-color: #45a049;
-  }
-  
-  .appdocbutto:disabled {
-    background-color: #aaa;
-    cursor: not-allowed;
-  }
-  
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.appdoch {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.docapptab {
+  width: 90%;
+  height: 90px; /* Increase table height */
+  border-collapse: collapse;
+  background-color: rgb(243, 233, 242);
+}
+
+.appdocth,
+.appdoctd {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+.appdocth {
+  font-weight: bold;
+  background-color: hsl(182, 57%, 68%);
+}
+
+.appdocbbuto {
+  padding: 3px 8px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.appdocbbuto:hover {
+  background-color: #1e9e24;
+}
+
+.appdocbbuto:disabled {
+  background-color: #d26c6c;
+  cursor: not-allowed;
+}
+
+.docapptab tr:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.docapptab {
+  line-height: 2;
+}
+
+.appdocth,
+.appdoctd {
+  padding: 6px;
+}
+
+.docapptab {
+  width: 100%; /* Increase table width */
+  table-layout: auto;
+}
+
+.appdocth,
+.appdoctd {
+  padding: 5px;
+}
+
+.doctors-approve-container {
+  padding: 20px 0;
+}
+
+.navbar {
+  background-color: #c826e1;
+  padding: 6px;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-menu {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+}
+ 
+.navbar-item {
+  cursor: pointer;
+  margin-right: 15px;
+  padding: 10px;
+  margin-top: 5px;
+}
